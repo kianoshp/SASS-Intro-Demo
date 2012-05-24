@@ -18,110 +18,50 @@ li
   { padding-left:15px; 
     background:url(../img/bullet.png) 0 5.9px no-repeat; 
   }
-
-@function setFontColor($backgroundColor, $fontColor) {
-  @if (lightness($backgroundColor) > 50%) {
-      @return $fontColor;
-    } @else {
-      @return invert($fontColor);
-    }
-}
-
-@function fc($backgroundColor, $fontColor) {
-  @return setFontColor($backgroundColor, $fontColor);
-}
-//base variables
-$urlBase: '../img/';
-
-//container colors
-$containerBgColor: #bada55;
-$containerBorderColor: darken($containerBgColor, 12.5%);
-$containerHeaderColor: darken($containerBgColor, 7.5%);
-$containerSectionColor: lighten($containerBgColor, 6.5%);
-$containerFooterColor: lighten($containerBgColor, 6.25%);
-$containerFontColor: fc($containerBgColor, #0a0a0a);
-
-//container dimensions
-$containerMargin: 40px;
-$containerPaddingUnit: 30px;
-$containerBorderWidth: 1px;
-
-$containerWidth: 960px;
-$containerSectionWidth: 493px;
-
-@mixin add-border($border-position: all, $border-size: 1px, $border-pattern: solid, $border-color: #000) {
-  @if $border-position == 'all' {
-    border: $border-size $border-pattern $border-color;
-  } @else {
-    border-#{$border-position}: $border-size $border-pattern $border-color;
-  }
-}
-
-@mixin add-border-radius($border-radius-position: all, $border-radius: 2px) {
-  @if $border-radius-position == 'all' {
-    border-radius: $border-radius;
-    -moz-border-radius: $border-radius;
-    -webkit-border-radius: $border-radius;
-    -o-border-radius: $border-radius;
-  } @else {
-    border-#{$border-radius-position}-radius: $border-radius;
-    -moz-border-#{$border-radius-position}-radius: $border-radius;
-    -webkit-border-#{$border-radius-position}-radius: $border-radius;
-    -o-border-#{$border-radius-position}-radius: $border-radius;
-  }
-}
-
+    
 #container
-  { margin:$containerMargin auto;
-    color: $containerFontColor;
-    width:$containerWidth;
-    border:$containerBorderWidth solid $containerBorderColor;
-    background:$containerBgColor;
-    @include add-border-radius(all, 5px);
-    & > header {
-      background:url(#{$urlBase}header.jpg) repeat-x $containerHeaderColor;
-    }
-    & > header, & > footer {
-      padding:$containerPaddingUnit * 2;
-      //calculate the sidth based on the total width
-      //minus the right and left padding
-      width:$containerWidth - ($containerPaddingUnit * 2 * 2);
-      overflow:hidden;
-      @include add-border(all, $containerBorderWidth, solid, $containerBorderColor);
-      border-width:$containerBorderWidth 0 $containerBorderWidth 0;
-      li {
-        float:left;
-        padding:0 5px 0 0;
-        background:none;
-      }
-    }
-    & > section {
-      background:$containerSectionColor;
-      padding:0 $containerPaddingUnit $containerPaddingUnit $containerPaddingUnit * 2;
-      float:left;
-      width:$containerSectionWidth;
-      @include add-border(right, $containerBorderWidth, solid, $containerBorderColor);
-    }
-    & > aside { 
-      padding-top:20px;
-      color: $containerFontColor;
-      float:left;
-      //calculate the aside width based on
-      //$containerWidth - $containerSectionWidth - left and right padding of section
-      //Also there is a border between the section and aside, don't forget that one
-      width:$containerWidth - $containerSectionWidth - ($containerPaddingUnit+ ($containerPaddingUnit * 2)) - $containerBorderWidth;
-    }
-    & > footer { 
-      padding:$containerPaddingUnit $containerPaddingUnit * 2 $containerPaddingUnit * 2;
-      background:$containerFooterColor;
-      li:after {
-        content:" |"
-      }
-      li:last-child:after {
-        content:""
-      }
-    }
+  { margin:40px auto;
+    width:960px;
+    border:1px solid #ccc;
+    background:#ececec;
   }
+  #container > header, #container > footer
+    { padding:80px 80px 80px;
+      width:800px;
+      overflow:hidden;
+      border: 1px solid #ccc;
+      border-width:1px 0 1px 0;
+    }
+  #container > header
+    { background:url(../img/header.jpg) repeat-x #d9d9d7;
+    }
+    #container > header li, #container > footer li
+    { float:left;
+      padding:0 5px 0 0;
+      background:none;
+    }
+  #container > section
+    { background:#fdfdfd;
+      padding:0 40px 40px 80px;
+      float:left;
+      width:493px;
+      border-right:1px solid #ccc;
+    }
+  #container > aside
+    { padding-top:20px;
+      float:left;
+      width:346px;
+    }
+  #container > footer
+  { padding:40px 80px 80px;
+    background:#fcfcfc;
+  }
+    #container > footer li:after
+    { content:" |"
+    }
+      #container > footer li:last-child:after
+      { content:""
+      }
 
 .post                     
   { overflow:visible; 

@@ -24,50 +24,52 @@ li {
 
 #container {
   margin: 40px auto;
-  color: #0a0a0a;
   width: 960px;
-  border: 1px solid #9fc42b;
-  background: #bada55;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #ececec;
 }
-#container > header {
-  background: url(../img/header.jpg) repeat-x #add336;
-}
+
 #container > header, #container > footer {
-  padding: 60px;
-  width: 840px;
+  padding: 80px 80px 80px;
+  width: 800px;
   overflow: hidden;
-  border: 1px solid #9fc42b;
+  border: 1px solid #ccc;
   border-width: 1px 0 1px 0;
 }
+
+#container > header {
+  background: url(../img/header.jpg) repeat-x #d9d9d7;
+}
+
 #container > header li, #container > footer li {
   float: left;
   padding: 0 5px 0 0;
   background: none;
 }
+
 #container > section {
-  background: #c5e070;
-  padding: 0 30px 30px 60px;
+  background: #fdfdfd;
+  padding: 0 40px 40px 80px;
   float: left;
   width: 493px;
-  border-right: 1px solid #9fc42b;
+  border-right: 1px solid #ccc;
 }
+
 #container > aside {
   padding-top: 20px;
-  color: #0a0a0a;
   float: left;
-  width: 376px;
+  width: 346px;
 }
+
 #container > footer {
-  padding: 30px 60px 60px;
-  background: #c5e06f;
+  padding: 40px 80px 80px;
+  background: #fcfcfc;
 }
+
 #container > footer li:after {
   content: " |";
 }
+
 #container > footer li:last-child:after {
   content: "";
 }
