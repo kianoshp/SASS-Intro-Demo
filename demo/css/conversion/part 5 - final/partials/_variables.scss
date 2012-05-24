@@ -1,0 +1,18 @@
+//base variables
+$urlBase: '../img/';
+
+//container colors
+$containerBgColor: #ececec;
+$containerBorderColor: darken($containerBgColor, 12.5%);
+$containerHeaderColor: darken($containerBgColor, 7.5%);
+$containerSectionColor: lighten($containerBgColor, 6.5%);
+$containerFooterColor: lighten($containerBgColor, 6.25%);
+$containerFontColor: fc($containerBgColor, #0a0a0a);
+
+//container dimensions
+$containerMargin: 40px;
+$containerPaddingUnit: 40px;
+$containerBorderWidth: 1px;
+
+$containerWidth: 960px;
+$containerSectionWidth: 493px;

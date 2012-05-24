@@ -1,0 +1,231 @@
+body 
+  { background:url(../img/grad.jpg) repeat-x #c0c0c0; 
+  }
+
+a 
+  { text-decoration:none; 
+    color:#474747; 
+    padding:1px;
+  }
+a:hover 
+  { background:#db5500; 
+    color:#fff; 
+  }
+.selected 
+  { border-bottom:1px solid #db5500;  
+  }
+li 
+  { padding-left:15px; 
+    background:url(../img/bullet.png) 0 5.9px no-repeat; 
+  }
+//base variables
+$urlBase: '../img/';
+
+//container colors
+$containerBgColor: #ececec;
+$containerBorderColor: #cccccc;
+$containerHeaderColor: #d9d9d9;
+$containerSectionColor: #fdfdfd;
+$containerFooterColor: #fcfcfc;
+
+//container dimensions
+$containerWidth: 960px;
+$containerHeaderWidth: 800px;
+$containerSectionWidth: 493px;
+$containerAsideWidth: 346px;
+$containerMargin: 40px;
+$containerPaddingUnit: 40px;
+$containerBorderWidth: 1px;
+
+#container
+  { margin:$containerMargin auto;
+    width:$containerWidth;
+    border:$containerBorderWidth solid $containerBorderColor;
+    background:$containerBgColor;
+    & > header {
+      background:url(#{$urlBase}header.jpg) repeat-x $containerHeaderColor;
+    }
+    & > header, & > footer {
+      padding:$containerPaddingUnit * 2;
+      width:$containerHeaderWidth;
+      overflow:hidden;
+      border: $containerBorderWidth solid $containerBorderColor;
+      border-width:$containerBorderWidth 0 $containerBorderWidth 0;
+      //Example of IE specific styles should be used
+      html.ie8 & {
+        padding: ($containerPaddingUnit * 2) + 5;      
+      }
+      li {
+        float:left;
+        padding:0 5px 0 0;
+        background:none;
+      }
+    }
+    & > section {
+      background:$containerSectionColor;
+      padding:0 $containerPaddingUnit $containerPaddingUnit $containerPaddingUnit * 2;
+      float:left;
+      width:$containerSectionWidth;
+      border-right:$containerBorderWidth solid $containerBorderColor;
+    }
+    & > aside { 
+      padding-top:20px;
+      float:left;
+      width:$containerAsideWidth;
+    }
+    & > footer { 
+      padding:$containerPaddingUnit $containerPaddingUnit * 2 $containerPaddingUnit * 2;
+      background:$containerFooterColor;
+      li:after {
+        content:" |"
+      }
+      li:last-child:after {
+        content:""
+      }
+    }
+  }
+
+.post                     
+  { overflow:visible; 
+    margin-top:40px; 
+  }
+  .post > header          
+    { margin:0 0 20px 0; 
+      position:relative; 
+    }
+  .post .date             
+    { padding:2px 4px ; 
+      background:#474747; 
+      color:#ececec; 
+      font-weight:bold; 
+      transform:rotate(270deg);
+      -moz-transform:rotate(270deg);
+      -webkit-transform:rotate(270deg);
+      position:absolute; 
+      top:60px; 
+      left:-105.5px; 
+    }
+  .post img               
+    { float:left;  
+      margin-right:10px;
+    }
+    .post.ext img         
+      { float:right; 
+        margin:0 0 0 10px; 
+      }
+  .post footer            
+    { overflow:hidden; 
+    }
+  .post footer li
+    { float:left;
+      background:none;
+    }
+
+.side-box 
+  { padding: 20px 80px 20px 40px; 
+  }
+  .side-box:not(:last-child) 
+    { border-bottom:1px solid #ccc; 
+    }
+    .side-box > header h3 
+      { margin-bottom:0;  
+      }
+    .side-box > header p  
+    { text-transform:uppercase; 
+      font-style:italic; 
+      font-size:90%; 
+    }
+
+
+    /* using > is faster, for the same reason you don't need a license to snorkel (AFAIK): you aren't going as deep.  */
+
+.pop-out > section > * 
+  { display:block; 
+    background:#fefefe; 
+    border:1px solid #474747; 
+    padding:20px; 
+    position:relative; 
+    width: 120%; 
+    left:20px; 
+  }
+
+
+.post-it 
+  { border:1px solid #db5500; 
+    padding: 10px; 
+    font-style:italic; 
+    position:relative; 
+    background:#f2965c; 
+    color:#333;
+    transform:rotate(356deg);
+    -moz-transform:rotate(356deg);
+    -webkit-transform:rotate(356deg);
+    z-index:10; 
+    top:10px; 
+    box-shadow:1px 1px 0px #333; 
+    -moz-box-shadow:1px 1px 0px #333; 
+    -webkit-box-shadow:1px 1px 0px #333; 
+  }
+         
+.meta 
+  { font-size:75%; 
+    font-style:italic; 
+  }
+.subtitle 
+  { text-transform:uppercase; 
+    font-size:90%; 
+    font-weight:bold; 
+    letter-spacing:1px; 
+    text-shadow:1px 1px 0 #fff; 
+  }
+
+.comment 
+  { border:1px solid #ccc; 
+    border-radius:7px; 
+    -moz-border-radius:7px; 
+    -webkit-border-radius:7px; 
+    padding:10px; 
+    margin:0 0 10px 0;
+  }
+  .comment > header > p 
+    { font-weight:bold;  
+      display:inline; 
+      margin:0 10px 20px 0; 
+    }
+  .reply.comment 
+    { margin-left:80px; 
+    }
+  .author.comment 
+    { color:#ececec; 
+      background:#474747; 
+    }
+    
+.comments-form p 
+  { padding:5px; 
+    border-radius:5px;  
+    -moz-border-radius:5px;  
+    -webkit-border-radius:5px; 
+  }
+.comments-form p:hover 
+  { background:#ececec;  
+  }
+.comments-form label 
+  { display:inline-block; 
+    width:70px; 
+    vertical-align:top; }
+.comments-form label:after 
+  { content: " : "; 
+  }
+.comments-form input[type=text],
+.comments-form button,
+.comments-form textarea 
+  { width:200px; 
+    border:1px solid #ccc; 
+    border-radius:5px; 
+    -moz-border-radius:5px; 
+    -webkit-border-radius:5px; 
+    padding:2px; 
+  }
+.comments-form button[type=submit] 
+  { margin-left:70px; 
+  }

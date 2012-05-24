@@ -1,0 +1,11 @@
+@function setFontColor($backgroundColor, $fontColor) {
+  @if (lightness($backgroundColor) > 50%) {
+      @return $fontColor;
+    } @else {
+      @return invert($fontColor);
+    }
+}
+
+@function fc($backgroundColor, $fontColor) {
+  @return setFontColor($backgroundColor, $fontColor);
+}
