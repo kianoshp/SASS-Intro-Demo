@@ -22,6 +22,11 @@ li {
   background: url(../img/bullet.png) 0 5.9px no-repeat;
 }
 
+
+/*==== | ===== changed area ========================
+  This is the area that I made the changes
+ =================================================== */
+
 #container {
   margin: 40px auto;
   width: 960px;
@@ -74,6 +79,7 @@ li {
   content: "";
 }
 
+/*==== | ===== end of changed area ======================== */
 .post {
   overflow: visible;
   margin-top: 40px;
